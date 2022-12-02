@@ -27,7 +27,7 @@ public class UsuarioServiceImpl implements UsuarioService{
 	 * Utilizamos los datos de la clase Usuario del paquete model
 	 */
 	@Override
-	public void save(Usuario usuario) {
-		repo.save(usuario);
+	public Usuario save(Usuario usuario) {
+		return repo.save(usuario);
 	}
 }

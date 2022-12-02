@@ -4,5 +4,5 @@ import com.example.eventos.model.Evento;
 
 public interface EventoService {
 
-	public void save(Evento evento);
+	public Evento save(Evento evento);
 }

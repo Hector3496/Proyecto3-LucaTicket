@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.eventos.adapter.EventoAdapter;
 import com.example.eventos.model.Evento;
+import com.example.eventos.response.EventoDTO;
 import com.example.eventos.services.EventoService;
 
 @RestController
@@ -19,10 +21,14 @@ public class EventoController {
     
     @Autowired
     private EventoService srv;
-    
+    @
+    Autowired
+	private EventoAdapter adapter;
+	
     @PostMapping("/addEvento")
-    public void altaEventos(@RequestBody Evento evento) {
-    	srv.save(evento);
+    public EventoDTO altaEventos(@RequestBody Evento evento) {
+        final Evento event = srv.save(evento);
+        return adapter.of(event);
     }
 
 }

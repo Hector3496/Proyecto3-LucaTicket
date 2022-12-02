@@ -10,5 +10,5 @@ public interface UsuarioService {
 	 * 
 	 * @param usuario con los datos para salvar
 	 */
-	public void save(Usuario usuario);
+	public Usuario save(Usuario usuario);
 }
