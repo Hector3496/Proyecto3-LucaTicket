@@ -52,8 +52,8 @@ class Proyecto03UsuariosApplicationTests {
 	@Test
 	void test05() {
 		usuario = new Usuario();
-		usuario.setFechaAlta(Date.valueOf("14/6/2023"));
-		assertThat(usuario.getFechaAlta()).isNotNull();
+		usuario.setFecha_alta(Date.valueOf("2022-12-05"));
+		assertThat(usuario.getFecha_alta()).isNotNull();
 	}
 
 }

@@ -57,7 +57,7 @@ class Proyecto03EventosApplicationTests {
 	@Test
 	void prueba5() {
 		evento = new Evento();
-		 evento.setHoraEvento(Date.valueOf("16:30"));
+		 evento.setHoraEvento("16:30");
 		 assertThat(evento.getHoraEvento()).isEqualTo("16:30");
 		
 	}
