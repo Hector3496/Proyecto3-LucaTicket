@@ -29,7 +29,7 @@ public class EventoController {
 	private EventoAdapter adapter;
     
     /*Metodo para mostrar el listado (GET) de los eventos, desde la base de datos, en servicio rest*/
-	@GetMapping
+	@GetMapping("/readEventos")
 	public List<EventoDTO> readEventos(){
 		final List<Evento> events = srv.findAll();
 		return adapter.of(events);
