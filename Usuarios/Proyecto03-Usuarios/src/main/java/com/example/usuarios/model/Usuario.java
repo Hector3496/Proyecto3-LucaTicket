@@ -10,6 +10,11 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
  
+/*
+ * Clase Usuario para definir Entity Usuario con atributos
+ * Metodos Getter, Setter y toString con Lombok
+ */
+
 @Getter
 @Setter
 @ToString

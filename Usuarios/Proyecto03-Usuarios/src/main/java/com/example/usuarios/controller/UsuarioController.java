@@ -16,6 +16,10 @@ import com.example.usuarios.model.Usuario;
 import com.example.usuarios.response.UsuarioDTO;
 import com.example.usuarios.services.UsuarioService;
 
+/*
+ * Clase UsuarioController para definir los metodos altaUsuario() y leerUsuarios()
+ */
+
 @RestController
 @RequestMapping("/usuarios")
 public class UsuarioController {
@@ -28,12 +32,18 @@ public class UsuarioController {
 	@Autowired
 	private UsuarioAdapter adapter;
 	
+	/*
+	 * Metodo altaUsuario() para añadir un usuario dado
+	 */
 	@PostMapping("/addUsuario")
 	public UsuarioDTO altaUsuario(@RequestBody Usuario usuario) {
 		final Usuario user = srv.save(usuario);
 		return adapter.of(user);
 	}
 	
+	/*
+	 * Metodo leerUsuarios() para leer un listado de usuarios
+	 */
 	@GetMapping("/leerUsuarios")
 		public List <UsuarioDTO> leerUsuarios() {
 		final List <Usuario> user=srv.findAll();

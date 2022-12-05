@@ -1,34 +1,25 @@
 package com.example.usuarios.response;
 
-
-
 /**
 * @author Raul
 */
+
 import java.io.Serializable;
 import java.util.Date;
-
-
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-
-
-/**
-* Creamos la entidad UsuarioDTO
-* Creamos los atributos de UsuarioDTO con los metodos getter y setters con Lombok
-*
+/*
+* Clase UsuarioDTO para definir Entity UsuarioDTO con atributos
+* Metodos Getter, Setter y toString con Lombok
 */
-
-
 
 @Getter
 @Setter
 @ToString
-public class UsuarioDTO implements Serializable{
-    
+public class UsuarioDTO implements Serializable{    
     
     private static final long serialVersionUID = 1L;
     
@@ -38,7 +29,4 @@ public class UsuarioDTO implements Serializable{
     private String mail;
     private String password;
     private Date fechaAlta;
-
-
-
 }

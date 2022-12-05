@@ -17,26 +17,26 @@ import com.example.usuarios.repository.UsuarioRepository;
 @Service
 public class UsuarioServiceImpl implements UsuarioService{
 
-	/**
-	 * 
-	 * Implementamos la clase  UsuarioRepository del paquete Repository
+	/*
+	 * Implementar clase UsuarioRepository del paquete Repository
 	 *
 	 */
 	@Autowired
 	private UsuarioRepository repo;
 
-	
-	/**
-	 * Sobreescribimos el metodo findAll() de UsuarioService
-	 */	
+	/*
+	 * Sobreescribir metodo findAll() de UsuarioService
+	 * Metodo findAll() para obtener un listado de usuarios
+	 */
 	@Override
 	public List<Usuario> findAll() {
 		return repo.findAll();
 	}
 
-	/**
-	 * Sobreescribimos el metodo save() de UsuarioService 
-	 * Utilizamos los datos de la clase Usuario del paquete model
+	/*
+	 * Sobreescribir metodo save() de UsuarioService 
+	 * * Metodo save() para obtener un usuario dado
+	 * @param usuario con los datos para salvar
 	 */	
 	@Override
 	public Usuario save(Usuario usuario) {
