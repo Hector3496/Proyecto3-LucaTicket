@@ -30,7 +30,7 @@ public class EventoController {
     
 	@GetMapping
 	public List<EventoDTO> readEventos(){
-		final List<Evento> events = srv.findall();
+		final List<Evento> events = srv.findAll();
 		return adapter.of(events);
 	}
     @PostMapping("/addEvento")

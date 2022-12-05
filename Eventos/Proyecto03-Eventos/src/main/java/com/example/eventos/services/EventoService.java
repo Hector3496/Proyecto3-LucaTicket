@@ -8,5 +8,5 @@ public interface EventoService {
 
 	public Evento save(Evento evento);
 
-	public List<Evento> findall();
+	public List<Evento> findAll();
 }

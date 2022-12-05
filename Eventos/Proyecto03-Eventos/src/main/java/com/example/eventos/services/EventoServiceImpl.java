@@ -22,7 +22,7 @@ public class EventoServiceImpl implements EventoService {
 	}
 
 	@Override
-	public List<Evento> findall() {
+	public List<Evento> findAll() {
 		return repo.findAll();
 	}
 
