@@ -6,35 +6,25 @@ package com.example.eventos.model;
 
 import java.util.Date;
 
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-
-import javax.persistence.Id;
-
-
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@Document(value="eventoDB")
-@Getter
-@Setter
-@ToString
-
-@Entity
 /**
  * Creamos la entidad Evento
  * Creamos los atributos de Evento con los metodos getter y setters con Lombok
  *
  */
+@Document(value="eventoDB")
+@Getter
+@Setter
+@ToString
 public class Evento {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String Nombre;
 	private String DescripcionCorta;
