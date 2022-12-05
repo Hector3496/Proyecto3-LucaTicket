@@ -28,5 +28,5 @@ public class UsuarioDTO implements Serializable{
     private String apellido;
     private String mail;
     private String password;
-    private Date fechaAlta;
+    private Date fecha_alta;
 }

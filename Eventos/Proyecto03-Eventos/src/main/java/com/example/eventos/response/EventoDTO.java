@@ -10,8 +10,8 @@ public class EventoDTO {
     private String Nombre;
     private String DescripcionCorta;
     private String DescripcionExtendida;
-    private Date FechaEvento;
-    private Date HoraEvento;
+    private String FechaEvento;
+    private String HoraEvento;
     private double Precios;
     private String Normas;
     private String SalaNombre;
@@ -23,8 +23,8 @@ public class EventoDTO {
         super();
         // TODO Auto-generated constructor stub
     }
-    public EventoDTO(int id, String nombre, String descripcionCorta, String descripcionExtendida, Date fechaEvento,
-            Date horaEvento, double precios, String normas, String salaNombre, String salaCiudad, String salaDireccion,
+    public EventoDTO(int id, String nombre, String descripcionCorta, String descripcionExtendida, String fechaEvento,
+            String horaEvento, double precios, String normas, String salaNombre, String salaCiudad, String salaDireccion,
             String salaTipoRecinto, int salaAforo) {
         super();
         this.id = id;
@@ -73,16 +73,16 @@ public class EventoDTO {
     public void setDescripcionExtendida(String descripcionExtendida) {
         DescripcionExtendida = descripcionExtendida;
     }
-    public Date getFechaEvento() {
+    public String getFechaEvento() {
         return FechaEvento;
     }
-    public void setFechaEvento(Date fechaEvento) {
+    public void setFechaEvento(String fechaEvento) {
         FechaEvento = fechaEvento;
     }
-    public Date getHoraEvento() {
+    public String getHoraEvento() {
         return HoraEvento;
     }
-    public void setHoraEvento(Date horaEvento) {
+    public void setHoraEvento(String horaEvento) {
         HoraEvento = horaEvento;
     }
     public double getPrecios() {

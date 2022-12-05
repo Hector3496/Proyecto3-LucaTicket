@@ -3,6 +3,9 @@ package com.example.usuarios.model;
 import java.util.Date;
  
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
@@ -23,6 +26,8 @@ import lombok.ToString;
 @Table(name="usuarios")
 public class Usuario {
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
     @NotEmpty(message = "Introduzca un nombre")
     private String nombre;
@@ -32,7 +37,7 @@ public class Usuario {
     private String mail;
     @NotEmpty(message = "La password no puede estar vacía")
     private String password;
-    private Date fechaAlta;
+    private Date fecha_alta;
 
     public Usuario() {
         super();

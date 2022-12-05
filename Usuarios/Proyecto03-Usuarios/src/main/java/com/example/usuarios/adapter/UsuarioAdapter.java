@@ -25,7 +25,7 @@ public class UsuarioAdapter {
         usuarioDTO.setApellido(usuario.getApellido());
         usuarioDTO.setMail(usuario.getMail());
         usuarioDTO.setPassword(usuario.getPassword());
-        usuarioDTO.setFechaAlta(usuario.getFechaAlta());
+        usuarioDTO.setFecha_alta(usuario.getFecha_alta());
         return usuarioDTO;
     }
 
