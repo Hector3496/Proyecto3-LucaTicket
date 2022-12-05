@@ -1,4 +1,6 @@
 package com.example.eventos.services;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 /**
  * @author Hector
@@ -17,6 +19,11 @@ public class EventoServiceImpl implements EventoService {
 	@Override
 	public Evento save(Evento evento) {
 		return repo.save(evento);
+	}
+
+	@Override
+	public List<Evento> findall() {
+		return repo.findAll();
 	}
 
 }

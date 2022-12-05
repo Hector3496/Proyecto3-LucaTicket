@@ -1,8 +1,11 @@
 package com.example.eventos.controller;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,7 +27,12 @@ public class EventoController {
     @
     Autowired
 	private EventoAdapter adapter;
-	
+    
+	@GetMapping
+	public List<EventoDTO> readEventos(){
+		final List<Evento> events = srv.findall();
+		return adapter.of(events);
+	}
     @PostMapping("/addEvento")
     public EventoDTO altaEventos(@RequestBody Evento evento) {
         final Evento event = srv.save(evento);
