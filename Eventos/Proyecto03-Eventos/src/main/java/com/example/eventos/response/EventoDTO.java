@@ -2,6 +2,8 @@ package com.example.eventos.response;
 
 import java.util.Date;
 
+/*Clase EventoDTO que se va a mostrar en servicio rest en lugar de Evento
+la cual es para rellenar la base de datos*/
 public class EventoDTO {
 
     private int id;

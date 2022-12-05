@@ -9,7 +9,8 @@ import org.springframework.stereotype.Service;
 
 import com.example.eventos.model.Evento;
 import com.example.eventos.repository.EventoRepository;
-
+/*Clase service que implementa los metodos de su interfaz para 
+realizar las funciones que pasa de capa en capa la interface*/
 @Service
 public class EventoServiceImpl implements EventoService {
 

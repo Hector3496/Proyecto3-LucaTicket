@@ -24,15 +24,17 @@ public class EventoController {
     
     @Autowired
     private EventoService srv;
-    @
-    Autowired
+    
+    @Autowired
 	private EventoAdapter adapter;
     
+    /*Metodo para mostrar el listado (GET) de los eventos, desde la base de datos, en servicio rest*/
 	@GetMapping
 	public List<EventoDTO> readEventos(){
 		final List<Evento> events = srv.findAll();
 		return adapter.of(events);
 	}
+    /*Metodo para añadir un evento a la base de datos,desde servicio rest*/
     @PostMapping("/addEvento")
     public EventoDTO altaEventos(@RequestBody Evento evento) {
         final Evento event = srv.save(evento);

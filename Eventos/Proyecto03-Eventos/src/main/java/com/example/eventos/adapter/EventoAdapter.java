@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class EventoAdapter {
-
+/* Metodo para realizar la conversion de la entity Evento a la clase a mostrar EventoDTO*/
 	public EventoDTO of(Evento evento) {
 		EventoDTO eventoDTO = new EventoDTO();
 		eventoDTO.setNombre(evento.getNombre());
@@ -28,6 +28,7 @@ public class EventoAdapter {
 		return eventoDTO;
 	}
 	
+/* Metodo para realizar la conversion de una lista de entity Evento a una lista a mostrar de EventoDTO*/
 	public List<EventoDTO> of(List<Evento> eventos){
 		return eventos.stream()
 				.map(e -> of(e))
