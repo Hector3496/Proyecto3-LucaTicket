@@ -16,8 +16,11 @@ import com.example.eventos.model.Evento;
 import com.example.eventos.response.EventoDTO;
 import com.example.eventos.services.EventoService;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 @RestController
 @RequestMapping("/eventos")
+@Tag(name = "eventos", description = "the Eventos API")
 public class EventoController {
 
     private static final Logger log = LoggerFactory.getLogger(EventoController.class);

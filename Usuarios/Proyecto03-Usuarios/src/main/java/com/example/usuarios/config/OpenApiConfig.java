@@ -24,8 +24,8 @@ public class OpenApiConfig {
                         url("https://grupo3.es").email("grupo@tres.es"))
                 .license(new License().name("LICENSE").url("http://springdoc.org")))
                 .externalDocs(new ExternalDocumentation()
-                .description("Proyecto de importar un CSV, Crear, Leer, Actualizar y Eliminar. Incluimos algunos listados de busquedas")
-                .url("http://localhost:8082/usuarios"));
+                .description("Proyecto de guardar en BBDD (MySQL), Crear, Leer, Actualizar y Eliminar. Incluimos algunos listados de busquedas")
+                .url("http://localhost:8083/usuarios"));
     }
 	
 

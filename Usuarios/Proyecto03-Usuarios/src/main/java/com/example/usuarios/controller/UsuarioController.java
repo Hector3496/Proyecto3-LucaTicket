@@ -21,12 +21,15 @@ import com.example.usuarios.model.Usuario;
 import com.example.usuarios.response.UsuarioDTO;
 import com.example.usuarios.services.UsuarioService;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 /*
  * Clase UsuarioController para definir los metodos altaUsuario() y leerUsuarios()
  */
 
 @RestController
 @RequestMapping("/usuarios")
+@Tag(name = "usuarios", description = "the Usuarios API")
 public class UsuarioController {
 
 	private static final Logger log = LoggerFactory.getLogger(UsuarioController.class);
