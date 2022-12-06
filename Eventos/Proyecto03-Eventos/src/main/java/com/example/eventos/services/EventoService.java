@@ -12,5 +12,12 @@ public interface EventoService {
 
 	public List<Evento> findAll();
 	
+<<<<<<< HEAD
 	public List<Evento> findByGenre(String genero);
+=======
+	/*
+     * Metodo para mostrar un evento por nombre en la base de datos
+     */
+	public List<Evento> findByNombre(String nombre);
+>>>>>>> 1e4790095447084df53c73b45eb608503e18a7b8
 }
