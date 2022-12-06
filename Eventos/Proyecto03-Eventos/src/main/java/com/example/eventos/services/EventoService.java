@@ -11,4 +11,9 @@ public interface EventoService {
 	public Evento save(Evento evento);
 
 	public List<Evento> findAll();
+	
+	/*
+     * Metodo para mostrar un evento por nombre en la base de datos
+     */
+	public List<Evento> findByNombre(String nombre);
 }

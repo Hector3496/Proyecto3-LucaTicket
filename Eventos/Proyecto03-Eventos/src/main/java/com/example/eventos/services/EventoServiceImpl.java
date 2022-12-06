@@ -26,5 +26,13 @@ public class EventoServiceImpl implements EventoService {
 	public List<Evento> findAll() {
 		return repo.findAll();
 	}
+	
+	/*
+     * Sobreescribir metodo para mostrar un evento por nombre en la base de datos
+     */
+	@Override
+	public List<Evento> findByNombre(String nombre) {
+		return repo.findByNombre(nombre);
+	}
 
 }
