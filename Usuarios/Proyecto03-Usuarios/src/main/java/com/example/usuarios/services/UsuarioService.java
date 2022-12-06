@@ -22,4 +22,7 @@ public interface UsuarioService {
 	 * Metodo findAll() para obtener un listado de usuarios
 	 */
 	public List<Usuario> findAll();
+	
+	public void deleteById(Long id);
+
 }

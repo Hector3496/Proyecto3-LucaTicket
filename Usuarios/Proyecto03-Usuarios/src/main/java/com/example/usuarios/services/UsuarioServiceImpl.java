@@ -42,4 +42,9 @@ public class UsuarioServiceImpl implements UsuarioService{
 	public Usuario save(Usuario usuario) {
 		return repo.save(usuario);
 	}
+	
+	@Override
+	public void deleteById(Long id) {
+		repo.deleteById(id);
+	}
 }
