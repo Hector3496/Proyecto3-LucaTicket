@@ -12,15 +12,14 @@ import com.example.eventos.model.Evento;
 /*Interface para realizar la llamada a metodos incluidos por defecto en la clase interna de JpaRepository*/
 public interface EventoRepository extends MongoRepository<Evento, Integer> {
 
-	@Query(value = "db.eventos.find({genre: \"?1\"})")
+	@Query(value = "db.eventos.find({genre: ?1})")
 	List<Evento> findByGenre(String genero);
-	
 	/*
      * Query para el metodo mostrar un evento por nombre en la base de datos
      */
-	@Query(value = "db.eventos.find({nombre: \"?1\"})")
+	@Query("db.LucaTicket.find({nombre: ?1})")
 	List<Evento> findByNombre(String nombre);
-	
-	public void deleteById(Long id);
+	@Query("db.LucaTicket.find({salaCiudad: ?1})")
+	List<Evento> findByCiudad(String ciudad);
 
 }

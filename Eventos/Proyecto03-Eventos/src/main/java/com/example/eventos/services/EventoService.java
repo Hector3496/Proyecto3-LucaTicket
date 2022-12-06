@@ -1,6 +1,7 @@
 package com.example.eventos.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.example.eventos.model.Evento;
 
@@ -20,6 +21,10 @@ public interface EventoService {
      */
 	public List<Evento> findByNombre(String nombre);
 	
-	public void deleteById(Long id);
+	public Optional<Evento> findById(int id);
+
+	public void deleteById(int id);
+
+	public List<Evento> findByCiudad(String ciudad);
 
 }

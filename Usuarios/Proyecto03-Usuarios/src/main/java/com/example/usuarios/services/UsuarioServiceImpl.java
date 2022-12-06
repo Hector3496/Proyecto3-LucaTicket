@@ -1,6 +1,7 @@
 package com.example.usuarios.services;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * @author Raul
@@ -44,7 +45,12 @@ public class UsuarioServiceImpl implements UsuarioService{
 	}
 	
 	@Override
-	public void deleteById(Long id) {
+	public void deleteById(int id) {
 		repo.deleteById(id);
+	}
+
+	@Override
+	public Optional<Usuario> findById(int id) {
+		return repo.findById(id);
 	}
 }

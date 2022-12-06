@@ -8,15 +8,18 @@ import javax.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.example.eventos.adapter.EventoAdapter;
+import com.example.eventos.controller.error.EventoNotFoundException;
 import com.example.eventos.model.Evento;
 import com.example.eventos.response.EventoDTO;
 import com.example.eventos.services.EventoService;
@@ -39,7 +42,26 @@ public class EventoController {
     /*Metodo para mostrar el listado (GET) de los eventos, desde la base de datos, en servicio rest*/
 	@GetMapping("/readEventos")
 	public List<EventoDTO> readEventos(){
-		final List<Evento> events = srv.findGenre();
+		final List<Evento> events = srv.findAll();
+		return adapter.of(events);
+	}
+	
+	@GetMapping("/{id}")
+	public Evento readEvento(@PathVariable int id) {
+		return srv.findById(id).orElseThrow(EventoNotFoundException::new);
+	}
+	@PutMapping
+	public void uploadEvento(@RequestBody Evento event) {
+		srv.save(event);
+	}
+	
+	@DeleteMapping("/{id}")
+	public void deleteEvento(@PathVariable int id) {
+		srv.deleteById(id);
+	}
+	@GetMapping("/byCiudad/{ciudad}")
+	public List<EventoDTO> findByCiudad(@PathVariable String ciudad){
+		final List<Evento> events = srv.findByCiudad(ciudad);
 		return adapter.of(events);
 	}
     /*Metodo para añadir un evento a la base de datos,desde servicio rest*/
@@ -81,5 +103,4 @@ public class EventoController {
     	final List<Evento> events = srv.findByNombre(nombre);
 		return adapter.of(events);
 	}
->>>>>>> 1e4790095447084df53c73b45eb608503e18a7b8
 }

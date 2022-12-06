@@ -1,5 +1,6 @@
 package com.example.eventos.services;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 /**
@@ -40,8 +41,18 @@ public class EventoServiceImpl implements EventoService {
 		return repo.findByNombre(nombre);
 	}
 	@Override
-	public void deleteById(Long id) {
+	public void deleteById(int id) {
 		repo.deleteById(id);
+	}
+
+	@Override
+	public Optional<Evento> findById(int id) {
+		return repo.findById(id);
+	}
+
+	@Override
+	public List<Evento> findByCiudad(String ciudad) {
+		return repo.findByCiudad(ciudad);
 	}
 
 }

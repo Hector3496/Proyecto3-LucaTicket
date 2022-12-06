@@ -1,5 +1,6 @@
 package com.example.usuarios.services;
 import java.util.List;
+import java.util.Optional;
 
 import com.example.usuarios.model.Usuario;
 
@@ -23,6 +24,8 @@ public interface UsuarioService {
 	 */
 	public List<Usuario> findAll();
 	
-	public void deleteById(Long id);
+	public Optional<Usuario> findById(int id);
+
+	public void deleteById(int id);
 
 }
