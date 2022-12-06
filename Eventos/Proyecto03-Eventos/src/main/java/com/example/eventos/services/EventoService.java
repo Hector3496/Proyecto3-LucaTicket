@@ -11,4 +11,6 @@ public interface EventoService {
 	public Evento save(Evento evento);
 
 	public List<Evento> findAll();
+	
+	public List<Evento> findByGenre(String genero);
 }

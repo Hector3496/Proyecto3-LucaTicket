@@ -39,6 +39,7 @@ public class Evento {
 	private String SalaDireccion;
 	private String SalaRecinto;
 	private int SalaAforo;
+	private String genre;
 
 	
 }

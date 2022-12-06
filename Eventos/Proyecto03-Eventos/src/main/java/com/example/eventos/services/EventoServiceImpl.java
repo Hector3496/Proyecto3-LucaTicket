@@ -26,5 +26,10 @@ public class EventoServiceImpl implements EventoService {
 	public List<Evento> findAll() {
 		return repo.findAll();
 	}
+	
+	@Override
+	public List<Evento> findByGenre(String genero){
+		return repo.findByGenre(genero);
+	}
 
 }
