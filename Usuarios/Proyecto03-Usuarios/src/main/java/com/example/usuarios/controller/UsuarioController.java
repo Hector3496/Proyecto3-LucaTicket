@@ -1,15 +1,20 @@
 package com.example.usuarios.controller;
 
+import java.net.URI;
 import java.util.List;
+
+import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.example.usuarios.adapter.UsuarioAdapter;
 import com.example.usuarios.model.Usuario;
@@ -33,7 +38,7 @@ public class UsuarioController {
 	private UsuarioAdapter adapter;
 	
 	/*
-	 * Metodo altaUsuario() para añadir un usuario dado
+	 * Metodo altaUsuario() para añadir un usuario dado y devuelve la URI
 	 */
 	@PostMapping("/addUsuario")
 	public UsuarioDTO altaUsuario(@RequestBody Usuario usuario) {
@@ -48,5 +53,20 @@ public class UsuarioController {
 		public List <UsuarioDTO> leerUsuarios() {
 		final List <Usuario> user=srv.findAll();
 		return adapter.of(user);
+	}
+	
+	/*
+	 * Metodo altaUsuario() para añadir un usuario dado y devuelve el recurso
+	 */
+	@PostMapping("/addUsuario/")
+	public Usuario addUsuario(@Valid @RequestBody Usuario usuario) {
+			
+		log.info("------ addUsuario (POST)");
+		Usuario result = this.srv.save(usuario);
+		log.info("------ Dato Guardado " + result);
+		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(result.getId())
+				.toUri();
+		
+		return result;
 	}
 }
