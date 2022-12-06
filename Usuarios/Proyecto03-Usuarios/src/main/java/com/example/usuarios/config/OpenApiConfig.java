@@ -15,9 +15,9 @@ import io.swagger.v3.oas.models.info.License;
 public class OpenApiConfig {
 	
     @Bean
-    public OpenAPI VideojuegoOpenAPI() {
+    public OpenAPI UsuarioOpenAPI() {
         return new OpenAPI()
-                .info(new Info().title("Videojuego API")
+                .info(new Info().title("Usuarios API")
                 .description("Documentación del Usuarios API")
                 .version("v1.0")
                 .contact(new Contact().name("Grupo 3").
@@ -25,7 +25,7 @@ public class OpenApiConfig {
                 .license(new License().name("LICENSE").url("http://springdoc.org")))
                 .externalDocs(new ExternalDocumentation()
                 .description("Proyecto de importar un CSV, Crear, Leer, Actualizar y Eliminar. Incluimos algunos listados de busquedas")
-                .url("http://localhost:8085/usuarios"));
+                .url("http://localhost:8082/usuarios"));
     }
 	
 
