@@ -27,18 +27,18 @@ public class Evento {
 	@Id
 	@Generated
 	private int id;
-	private String Nombre;
-	private String DescripcionCorta;
-	private String DescripcionExtendida;
-    private String FechaEvento;
-    private String HoraEvento;
-	private double Precios;
-	private String Normas;
-	private String SalaNombre;
-	private String SalaCiudad;
-	private String SalaDireccion;
-	private String SalaRecinto;
-	private int SalaAforo;
+	private String nombre;
+	private String descripcionCorta;
+	private String descripcionExtendida;
+    private String fechaEvento;
+    private String horaEvento;
+	private double precios;
+	private String normas;
+	private String salaNombre;
+	private String salaCiudad;
+	private String salaDireccion;
+	private String salaTipoRecinto;
+	private int salaAforo;
 	private String genre;
 
 	
