@@ -27,18 +27,21 @@ public class EventoServiceImpl implements EventoService {
 		return repo.findAll();
 	}
 	
-<<<<<<< HEAD
+
 	@Override
 	public List<Evento> findByGenre(String genero){
 		return repo.findByGenre(genero);
-=======
+	}
 	/*
      * Sobreescribir metodo para mostrar un evento por nombre en la base de datos
      */
 	@Override
 	public List<Evento> findByNombre(String nombre) {
 		return repo.findByNombre(nombre);
->>>>>>> 1e4790095447084df53c73b45eb608503e18a7b8
+	}
+	@Override
+	public void deleteById(Long id) {
+		repo.deleteById(id);
 	}
 
 }

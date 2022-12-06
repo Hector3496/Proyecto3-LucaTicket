@@ -49,15 +49,15 @@ public class EventoController {
         return adapter.of(event);
     }
     
-<<<<<<< HEAD
-	}@GetMapping("/byName/{genero}")
+
+	@GetMapping("/byName/{genero}")
     public List<EventoDTO> findByGenre(@PathVariable String genero){
         final List<Evento> events = srv.findByGenre(genero);
         return adapter.of(events);
     }
     
 
-=======
+
     /*
 	 * Metodo altaUsuario() para añadir un usuario dado y devuelve el recurso
 	 */

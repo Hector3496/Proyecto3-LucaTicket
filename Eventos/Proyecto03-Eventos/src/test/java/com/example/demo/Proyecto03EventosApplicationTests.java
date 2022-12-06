@@ -92,4 +92,16 @@ class Proyecto03EventosApplicationTests {
 		assertThat(evento.getSalaAforo()).isNotNegative();
 		
 	}
+	@Test
+	void pruebaGenero() {
+		evento = new Evento();
+		evento.setGenre("Ficcion");
+		assertThat(evento.getGenre()).isNotNull();
+	}
+	@Test
+	void pruebaGenero2() {
+		evento = new Evento();
+		evento.setGenre("Ficcion");
+		assertThat(evento.getGenre()).isNotEmpty();
+	}
 }
