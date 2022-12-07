@@ -13,16 +13,15 @@ import com.example.eventos.model.Evento;
 public interface EventoRepository extends MongoRepository<Evento, Integer> {
 
 	//Query para el metodo mostrar los eventos por un genero
-	@Query(value = "db.eventoDB.find({\"genre\":?1})")
+	@Query(value = "{genre:?0}")
 	List<Evento> findByGenre(String genero);
 	
 	//Query para el metodo mostrar un evento por nombre en la base de datos
-	@Query("db.eventoDB.find({\"nombre\":?1})")
+	@Query("{nombre:?0}")
 	List<Evento> findByNombre(String nombre);
 	
 	//Query para el metodo mostrar los eventos de una ciudad
-	@Query("db.eventoDB.find({\"salaCiudad\":?1})")
+	@Query("{salaCiudad:?0}")
 	List<Evento> findByCiudad(String ciudad);
-	
 
 }
