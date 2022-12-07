@@ -25,7 +25,7 @@ public class EventoAdapter {
 		eventoDTO.setSalaNombre(evento.getSalaNombre());
 		eventoDTO.setSalaCiudad(evento.getSalaCiudad());
 		eventoDTO.setSalaDireccion(evento.getSalaDireccion());
-		eventoDTO.setSalaTipoRecinto(evento.getSalaRecinto());
+		eventoDTO.setSalaTipoRecinto(evento.getSalaTipoRecinto());
 		eventoDTO.setSalaAforo(evento.getSalaAforo());
 		return eventoDTO;
 	}
