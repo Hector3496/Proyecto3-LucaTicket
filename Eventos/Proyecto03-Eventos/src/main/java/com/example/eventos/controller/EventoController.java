@@ -72,7 +72,7 @@ public class EventoController {
     }
     
 
-	@GetMapping("/byName/{genero}")
+	@GetMapping("/byGenre/{genero}")
     public List<EventoDTO> findByGenre(@PathVariable String genero){
         final List<Evento> events = srv.findByGenre(genero);
         return adapter.of(events);
