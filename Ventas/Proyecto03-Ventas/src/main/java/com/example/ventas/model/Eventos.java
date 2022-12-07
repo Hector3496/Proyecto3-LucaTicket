@@ -1,9 +1,14 @@
 package com.example.ventas.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -23,9 +28,14 @@ import lombok.ToString;
 @Table(name="eventos")
 public class Eventos {
 	
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@ManyToOne
+    @JoinColumn(name = "id_Evento")
 	private int idEvento;
+	
+	private Usuarios usuarios;
+	
+	@OneToMany(mappedBy="eventos")
+	List<Carrito>products;
 
 	public Eventos() {
 		super();
