@@ -18,7 +18,6 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-
 @Entity
 @Table(name="eventos")
 public class Eventos {
