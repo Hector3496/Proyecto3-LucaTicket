@@ -7,8 +7,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 
 @Component
 public class EventoAdapter {
@@ -27,7 +25,8 @@ public class EventoAdapter {
 		eventoDTO.setSalaDireccion(evento.getSalaDireccion());
 		eventoDTO.setSalaTipoRecinto(evento.getSalaTipoRecinto());
 		eventoDTO.setSalaAforo(evento.getSalaAforo());
-		
+		eventoDTO.setGenre(evento.getGenre());
+
 		return eventoDTO;
 	}
 	

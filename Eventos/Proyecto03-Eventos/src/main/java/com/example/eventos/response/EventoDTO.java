@@ -19,6 +19,8 @@ public class EventoDTO {
     private String SalaDireccion;
     private String SalaTipoRecinto;
     private int SalaAforo;
+    private String genre;
+    
     public EventoDTO() {
         super();
         // TODO Auto-generated constructor stub
@@ -127,4 +129,11 @@ public class EventoDTO {
     public void setSalaAforo(int salaAforo) {
         SalaAforo = salaAforo;
     }
+	public String getGenre() {
+		return genre;
+	}
+	public void setGenre(String genre) {
+		this.genre = genre;
+	}
+    
 }
