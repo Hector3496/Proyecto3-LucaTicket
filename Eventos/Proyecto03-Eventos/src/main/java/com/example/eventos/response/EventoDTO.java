@@ -7,49 +7,49 @@ la cual es para rellenar la base de datos*/
 public class EventoDTO {
 
     private int id;
-    private String Nombre;
-    private String DescripcionCorta;
-    private String DescripcionExtendida;
-    private String FechaEvento;
-    private String HoraEvento;
-    private double Precios;
-    private String Normas;
-    private String SalaNombre;
-    private String SalaCiudad;
-    private String SalaDireccion;
-    private String SalaTipoRecinto;
-    private int SalaAforo;
+    private String nombre;
+    private String descripcionCorta;
+    private String descripcionExtendida;
+    private String fechaEvento;
+    private String horaEvento;
+    private double precios;
+    private String normas;
+    private String salaNombre;
+    private String salaCiudad;
+    private String salaDireccion;
+    private String salaTipoRecinto;
+    private int salaAforo;
     private String genre;
     
     public EventoDTO() {
         super();
         // TODO Auto-generated constructor stub
     }
-    public EventoDTO(int id, String nombre, String descripcionCorta, String descripcionExtendida, String fechaEvento,
-            String horaEvento, double precios, String normas, String salaNombre, String salaCiudad, String salaDireccion,
-            String salaTipoRecinto, int salaAforo) {
+    public EventoDTO(int id, String Nombre, String DescripcionCorta, String DescripcionExtendida, String FechaEvento,
+            String HoraEvento, double Precios, String Normas, String SalaNombre, String SalaCiudad, String SalaDireccion,
+            String SalaTipoRecinto, int SalaAforo) {
         super();
         this.id = id;
-        Nombre = nombre;
-        DescripcionCorta = descripcionCorta;
-        DescripcionExtendida = descripcionExtendida;
-        FechaEvento = fechaEvento;
-        HoraEvento = horaEvento;
-        Precios = precios;
-        Normas = normas;
-        SalaNombre = salaNombre;
-        SalaCiudad = salaCiudad;
-        SalaDireccion = salaDireccion;
-        SalaTipoRecinto = salaTipoRecinto;
-        SalaAforo = salaAforo;
+        nombre = Nombre;
+        descripcionCorta = DescripcionCorta;
+        descripcionExtendida = DescripcionExtendida;
+        fechaEvento = FechaEvento;
+        horaEvento = HoraEvento;
+        precios = Precios;
+        normas = Normas;
+        salaNombre = SalaNombre;
+        salaCiudad = SalaCiudad;
+        salaDireccion = SalaDireccion;
+        salaTipoRecinto = SalaTipoRecinto;
+        salaAforo = SalaAforo;
     }
     @Override
     public String toString() {
-        return "EventoDTO [id=" + id + ", Nombre=" + Nombre + ", DescripcionCorta=" + DescripcionCorta
-                + ", DescripcionExtendida=" + DescripcionExtendida + ", FechaEvento=" + FechaEvento + ", HoraEvento="
-                + HoraEvento + ", Precios=" + Precios + ", Normas=" + Normas + ", SalaNombre=" + SalaNombre
-                + ", SalaCiudad=" + SalaCiudad + ", SalaDireccion=" + SalaDireccion + ", SalaTipoRecinto="
-                + SalaTipoRecinto + ", SalaAforo=" + SalaAforo + "]";
+        return "EventoDTO [id=" + id + ", Nombre=" + nombre + ", DescripcionCorta=" + descripcionCorta
+                + ", DescripcionExtendida=" + descripcionExtendida + ", FechaEvento=" + fechaEvento + ", HoraEvento="
+                + horaEvento + ", Precios=" + precios + ", Normas=" + normas + ", SalaNombre=" + salaNombre
+                + ", SalaCiudad=" + salaCiudad + ", SalaDireccion=" + salaDireccion + ", SalaTipoRecinto="
+                + salaTipoRecinto + ", SalaAforo=" + salaAforo + "]";
     }
     public int getId() {
         return id;
@@ -58,76 +58,76 @@ public class EventoDTO {
         this.id = id;
     }
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
-    public void setNombre(String nombre) {
-        Nombre = nombre;
+    public void setNombre(String Nombre) {
+        nombre = Nombre;
     }
     public String getDescripcionCorta() {
-        return DescripcionCorta;
+        return descripcionCorta;
     }
-    public void setDescripcionCorta(String descripcionCorta) {
-        DescripcionCorta = descripcionCorta;
+    public void setDescripcionCorta(String DescripcionCorta) {
+        descripcionCorta = DescripcionCorta;
     }
     public String getDescripcionExtendida() {
-        return DescripcionExtendida;
+        return descripcionExtendida;
     }
-    public void setDescripcionExtendida(String descripcionExtendida) {
-        DescripcionExtendida = descripcionExtendida;
+    public void setDescripcionExtendida(String DescripcionExtendida) {
+        descripcionExtendida = DescripcionExtendida;
     }
     public String getFechaEvento() {
-        return FechaEvento;
+        return fechaEvento;
     }
-    public void setFechaEvento(String fechaEvento) {
-        FechaEvento = fechaEvento;
+    public void setFechaEvento(String FechaEvento) {
+        fechaEvento = FechaEvento;
     }
     public String getHoraEvento() {
-        return HoraEvento;
+        return horaEvento;
     }
-    public void setHoraEvento(String horaEvento) {
-        HoraEvento = horaEvento;
+    public void setHoraEvento(String HoraEvento) {
+        horaEvento = HoraEvento;
     }
     public double getPrecios() {
-        return Precios;
+        return precios;
     }
-    public void setPrecios(double precios) {
-        Precios = precios;
+    public void setPrecios(double Precios) {
+        precios = Precios;
     }
     public String getNormas() {
-        return Normas;
+        return normas;
     }
-    public void setNormas(String normas) {
-        Normas = normas;
+    public void setNormas(String Normas) {
+        normas = Normas;
     }
     public String getSalaNombre() {
-        return SalaNombre;
+        return salaNombre;
     }
-    public void setSalaNombre(String salaNombre) {
-        SalaNombre = salaNombre;
+    public void setSalaNombre(String SalaNombre) {
+        salaNombre = SalaNombre;
     }
     public String getSalaCiudad() {
-        return SalaCiudad;
+        return salaCiudad;
     }
-    public void setSalaCiudad(String salaCiudad) {
-        SalaCiudad = salaCiudad;
+    public void setSalaCiudad(String SalaCiudad) {
+        salaCiudad = SalaCiudad;
     }
     public String getSalaDireccion() {
-        return SalaDireccion;
+        return salaDireccion;
     }
-    public void setSalaDireccion(String salaDireccion) {
-        SalaDireccion = salaDireccion;
+    public void setSalaDireccion(String SalaDireccion) {
+        salaDireccion = SalaDireccion;
     }
     public String getSalaTipoRecinto() {
-        return SalaTipoRecinto;
+        return salaTipoRecinto;
     }
-    public void setSalaTipoRecinto(String salaTipoRecinto) {
-        SalaTipoRecinto = salaTipoRecinto;
+    public void setSalaTipoRecinto(String SalaTipoRecinto) {
+        salaTipoRecinto = SalaTipoRecinto;
     }
     public int getSalaAforo() {
-        return SalaAforo;
+        return salaAforo;
     }
-    public void setSalaAforo(int salaAforo) {
-        SalaAforo = salaAforo;
+    public void setSalaAforo(int SalaAforo) {
+        salaAforo = SalaAforo;
     }
 	public String getGenre() {
 		return genre;

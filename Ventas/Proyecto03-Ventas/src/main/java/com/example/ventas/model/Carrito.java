@@ -1,6 +1,13 @@
 package com.example.ventas.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,28 +16,27 @@ import lombok.ToString;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.*;
 
 @Getter
 @Setter
 @ToString
 @Entity
-@Table(name="Carrito")
+@Table(name="carritos")
 public class Carrito {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@JoinColumn(name="id_Product")
-	private int idProduct;
+	private int id;
+		
+	@OneToMany(mappedBy = "carrito")
+	private List<Evento> events;
 	
 	@ManyToOne
-	private Eventos eventos;
+	@JoinColumn(name="id_usuario")
+	private Usuario usuarios;
 	
-	@OneToMany
-	private Usuarios usuarios;
-	
-	@JoinColumn(name="Fecha_Compra")
-	private Date fechaCompra;
+	@JoinColumn(name="fecha_Compra")
+	private Date fecha_Compra;
 
 	//@OneToMany(mappedBy = "carrito")
     //List<Carrito> products;
