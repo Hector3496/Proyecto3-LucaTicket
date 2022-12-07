@@ -62,11 +62,11 @@ public class UsuarioController {
 		return adapter.of(user);
 	}
 	@GetMapping("/{id}")
-	public Usuario readEvento(@PathVariable int id) {
+	public Usuario readUsuario(@PathVariable int id) {
 		return srv.findById(id).orElseThrow(UsuarioNotFoundException::new);
 	}
 	@PutMapping
-	public void uploadEvento(@RequestBody Usuario user) {
+	public void uploadUsuario(@RequestBody Usuario user) {
 		srv.save(user);
 	}
 	
