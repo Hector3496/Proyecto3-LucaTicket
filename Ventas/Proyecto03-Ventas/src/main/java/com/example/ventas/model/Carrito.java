@@ -37,6 +37,9 @@ public class Carrito {
 	
 	@JoinColumn(name="fecha_Compra")
 	private Date fecha_Compra;
+	
+	@JoinColumn(name="validacion")
+	private int validacion;
 
 	//@OneToMany(mappedBy = "carrito")
     //List<Carrito> products;

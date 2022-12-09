@@ -27,6 +27,7 @@ public class CarritoResponse implements Serializable {
 	private int id;
     private String usuario;
     private Date fecha_Compra;
+    private int validacion;
     private List<EventosResponse> eventos;
 	
 	/*
@@ -38,6 +39,7 @@ public class CarritoResponse implements Serializable {
 		carritoResponse.setUsuario(carrito.getUsuarios().getNombre());
 		carritoResponse.setFecha_Compra(carrito.getFecha_Compra());
 		carritoResponse.setEventos(EventosResponse.of(carrito.getEvents()));
+		carritoResponse.setValidacion(carrito.getValidacion());
 		return carritoResponse;
 	}
 	
