@@ -43,9 +43,12 @@ public class Carrito {
 
 	//@OneToMany(mappedBy = "carrito")
     //List<Carrito> products;
+	public int getValidacion() {
+		return validacion;
+	}
 	
-	public void setValidacion(int validacion) {
-		this.validacion = (int)(Math.random()*4+1);
+	public void setValidacion(int validation) {
+		this.validacion = validation;
 	}
 	
 }

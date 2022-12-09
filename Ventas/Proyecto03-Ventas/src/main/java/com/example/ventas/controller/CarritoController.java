@@ -24,8 +24,11 @@ import com.example.ventas.repository.CarritoRepository;
 import com.example.ventas.response.CarritoResponse;
 import com.example.ventas.service.CarritoServiceImpl;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 @RestController
 @RequestMapping("/carrito")
+@Tag(name = "carritos", description = "the Ventas API")
 public class CarritoController {
 
 	private static final Logger log = LoggerFactory.getLogger(CarritoController.class);
@@ -48,9 +51,19 @@ public class CarritoController {
     	//La adaptacion (paso a DTO) se hace en esta capa de control; no en Service o repo
         return CarritoResponse.of(carritoRepo.findById(id).orElseThrow(CarritoNotFoundException::new));
     }
-	@PostMapping("/addCarrito/{id}/{id_Evento}")
-    public void addCarrito(@PathVariable int id, @RequestParam int id_Evento, @RequestParam(defaultValue = "1") Integer qt) {
-		carritoSrv.addCarrito(id, id_Evento, qt);
+	/*
+	//La llamaremos  
+    //    /1/addCarrito?idEvent=2
+    //    /1/addCarrito?idEvent=2&qt=8
+	@PostMapping("/{id}/addCarrito")
+    public void addCarrito(@PathVariable int id, @RequestParam int idEvent, @RequestParam(defaultValue = "1") Integer qt) {
+		carritoSrv.addCarrito(id, idEvent, qt);
+    }*/
+	
+	@PostMapping("/addCarrito")
+    public CarritoResponse altaCarrito(@RequestBody Carrito carrito) {
+        final Carrito cart = carritoSrv.save(carrito);
+        return CarritoResponse.of(cart);
     }
 	@PostMapping("/addCarrito/")
 	public Carrito addCarrito(@Valid @RequestBody Carrito carrito) {

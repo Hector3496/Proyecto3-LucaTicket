@@ -1,6 +1,7 @@
 package com.example.ventas.model;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -38,7 +38,7 @@ public class CarritoServiceImpl {
 		for(int i = 0; i < qt; i++) {
 			Evento e = new Evento();
 			e.setCarrito(carrito);
-			e.setId(id);
+			e.setId(idEvent);
 			e.setNombreEvento(nombreEvento);
 			e.setPrecio(precio);
 			eventosRepo.save(e);
@@ -49,8 +49,11 @@ public class CarritoServiceImpl {
 		return carritoRepo.findAll();
 	}
 
-	public Carrito save(@Valid Carrito carrito) {
+	public Carrito save(Carrito carrito) {
 		return carritoRepo.save(carrito);
+	}
+	public Optional<Carrito> findById(int id){
+		return carritoRepo.findById(id);
 	}
 
 }
