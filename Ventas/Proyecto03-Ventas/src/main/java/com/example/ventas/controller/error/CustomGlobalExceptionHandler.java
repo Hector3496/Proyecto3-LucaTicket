@@ -22,6 +22,7 @@ import org.springframework.web.bind.MissingPathVariableException;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.ServletRequestBindingException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.context.request.async.AsyncRequestTimeoutException;
 import org.springframework.web.multipart.support.MissingServletRequestPartException;
@@ -41,6 +42,27 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 @ControllerAdvice
 public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler {		
 	
+	/*
+	 * NO_CONTENT
+	 * error 204
+	 * cuando el servidor no puede encontrar contenido en la base de datos
+	 */
+	protected ResponseEntity<Object> handleNoHandlerContentException(
+			CarritoNoContentException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
+		logger.info("------ handleNoHandlerContentException()");
+		
+		StringBuilder builder = new StringBuilder();	 
+		builder.append("No encontrado");
+		
+		Map<String, Object> body = new LinkedHashMap<>();		
+		body.put("timestamp", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()));
+		body.put("status", status.value());		
+		body.put("error", ex.getLocalizedMessage());
+		body.put("message", builder.toString());
+		body.put("author", "Susana Díaz");
+		
+		return new ResponseEntity<Object>(body, new HttpHeaders(), HttpStatus.NO_CONTENT);
+	}
 	/*
 	 * BAD_REQUEST
 	 * error 400
