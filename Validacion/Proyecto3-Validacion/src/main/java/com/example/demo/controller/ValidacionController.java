@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.controller.error.ValidacionConflictException;
 import com.example.demo.controller.error.ValidacionDefaultException;
-import com.example.demo.controller.error.ValidacionNoContentException;
 import com.example.demo.controller.error.ValidacionNotFoundException;
 import com.example.demo.controller.error.ValidacionOkException;
 import com.example.demo.controller.error.ValidacionUnauthorizedException;
@@ -35,15 +35,15 @@ public class ValidacionController {
             return srv.validationOK(1).orElseThrow(ValidacionOkException::new);
         }
         else if(validation == 2){
-            log.info("--------------------- VALIDACION NO CONTENT " + validation());
-            return srv.validationNoContent(1).orElseThrow(ValidacionNoContentException::new); 
+            log.info("--------------------- VALIDACION CONFLICT " + validation);
+            return srv.validationNoContent(1).orElseThrow(ValidacionConflictException::new); 
         }
         else if(validation == 3){
-            log.info("--------------------- VALIDACION UNAUTHORIZED" + validation());
+            log.info("--------------------- VALIDACION UNAUTHORIZED" + validation);
             return srv.validationUnauthorized(1).orElseThrow(ValidacionUnauthorizedException::new);
         }
         else if(validation == 4){
-            log.info("--------------------- VALIDACION NOT FOUND" + validation());
+            log.info("--------------------- VALIDACION NOT FOUND" + validation);
             return srv.validationNotFound(1).orElseThrow(ValidacionNotFoundException::new);
         }
         return srv.validationDefault(1).orElseThrow(ValidacionDefaultException::new);

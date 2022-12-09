@@ -43,27 +43,6 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler {		
 	
 	/*
-	 * NO_CONTENT
-	 * error 204
-	 * cuando el servidor no puede encontrar contenido en la base de datos
-	 */
-	protected ResponseEntity<Object> handleNoHandlerContentException(
-			ValidacionNoContentException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
-		logger.info("------ handleNoHandlerContentException()");
-		
-		StringBuilder builder = new StringBuilder();	 
-		builder.append("No encontrado");
-		
-		Map<String, Object> body = new LinkedHashMap<>();		
-		body.put("timestamp", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()));
-		body.put("status", status.value());		
-		body.put("error", ex.getLocalizedMessage());
-		body.put("message", builder.toString());
-		body.put("author", "Susana Díaz");
-		
-		return new ResponseEntity<Object>(body, new HttpHeaders(), HttpStatus.NO_CONTENT);
-	}
-	/*
 	 * BAD_REQUEST
 	 * error 400
 	 * cuando el servidor no puede procesar la solicitud debido a un error del cliente
