@@ -69,7 +69,14 @@ public class UsuarioController {
 	public void uploadUsuario(@RequestBody Usuario user) {
 		srv.save(user);
 	}
-	
+	//Metodo para modificar un usuario mostrando el recurso
+    @PutMapping("/")
+    public UsuarioDTO uploadUsuario2(@RequestBody Usuario user) {
+        final Usuario usuario = srv.save(user);
+        log.info("------ Dato Modificado con PUT / " + usuario);
+        return adapter.of(usuario);
+        
+    }
 	@DeleteMapping("/{id}")
 	public void deleteUsuario(@PathVariable int id) {
 		srv.deleteById(id);
