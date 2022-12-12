@@ -43,22 +43,22 @@ class Proyecto03EventosApplicationTests {
 	@Test
 	void prueba3() {
 		evento = new Evento();
-		evento.setSalaNombre("Juan");
+		evento.setSalanombre("Juan");
 		assertThat(evento.getNombre()).isNotNull();
 	}
 	
 	@Test
 	void prueba4() {
 		evento = new Evento();
-		evento.setDescripcionCorta("Un local chulisimo");
-		assertThat(evento.getDescripcionCorta()).isNotNull();
+		evento.setDescripcioncorta("Un local chulisimo");
+		assertThat(evento.getDescripcioncorta()).isNotNull();
 	}
 	
 	@Test
 	void prueba5() {
 		evento = new Evento();
-		 evento.setHoraEvento("16:30");
-		 assertThat(evento.getHoraEvento()).isEqualTo("16:30");
+		 evento.setFechaevento("16:30");
+		 assertThat(evento.getFechaevento()).isEqualTo("16:30");
 		
 	}
 	
@@ -80,16 +80,16 @@ class Proyecto03EventosApplicationTests {
 	@Test
 	void prueba8() {
 		evento = new Evento();
-		evento.setSalaAforo(200);
-		assertThat(evento.getSalaAforo()).isNotNull();
+		evento.setSalaaforo(200);
+		assertThat(evento.getSalaaforo()).isNotNull();
 		
 	}
 	
 	@Test
 	void prueba9() {
 		evento = new Evento();
-		evento.setSalaAforo(200);
-		assertThat(evento.getSalaAforo()).isNotNegative();
+		evento.setSalaaforo(200);
+		assertThat(evento.getSalaaforo()).isNotNegative();
 		
 	}
 	@Test

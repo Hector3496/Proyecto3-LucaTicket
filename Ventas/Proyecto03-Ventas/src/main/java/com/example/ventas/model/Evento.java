@@ -1,16 +1,10 @@
 package com.example.ventas.model;
 
-import java.util.List;
-import java.util.Optional;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -24,19 +18,22 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-@Entity
 public class Evento {
-	
-	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private int id;
-	
-	@ManyToOne
-	private Carrito carrito;
-	
-	private String nombreEvento;
-	private double precio;
-	
+	private String nombre;
+	private String descripcioncorta;
+	private String descripcionextendida;
+    private String fechaevento;
+    private String horaevento;
+	private double precios;
+	private String normas;
+	private String salanombre;
+	private String salaciudad;
+	private String saladireccion;
+	private String salatiporecinto;
+	private int salaaforo;
+	private String genre;
 	public Evento() {
 		super();
 	}

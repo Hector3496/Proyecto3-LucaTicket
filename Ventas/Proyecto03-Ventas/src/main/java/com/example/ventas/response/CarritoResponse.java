@@ -25,10 +25,10 @@ public class CarritoResponse implements Serializable {
 	 */	
 	private static final long serialVersionUID = 1L;
 	private int id;
-    private String usuario;
+    private int usuario;
     private Date fecha_Compra;
     private int validacion;
-    private List<EventosResponse> eventos;
+    private int evento;
 	
 	/*
 	 * Metodo para realizar la conversion de la entidad Evento
@@ -36,10 +36,9 @@ public class CarritoResponse implements Serializable {
 	public static CarritoResponse of(Carrito carrito) {
 		CarritoResponse carritoResponse = new CarritoResponse();
 		carritoResponse.setId(carrito.getId());
-		carritoResponse.setUsuario(carrito.getUsuarios().getNombre());
-		carritoResponse.setFecha_Compra(carrito.getFecha_Compra());
-		carritoResponse.setEventos(EventosResponse.of(carrito.getEvents()));
-		carritoResponse.setValidacion(carrito.getValidacion());
+		carritoResponse.setUsuario(carrito.getIdusuario());
+		carritoResponse.setFecha_Compra(carrito.getFechacompra());
+		carritoResponse.setEvento(carrito.getIdevento());
 		return carritoResponse;
 	}
 	

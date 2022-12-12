@@ -27,28 +27,8 @@ public class Carrito {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-		
-	@OneToMany(mappedBy = "carrito")
-	private List<Evento> events;
-	
-	@ManyToOne
-	@JoinColumn(name="id_usuario")
-	private Usuario usuarios;
-	
-	@JoinColumn(name="fecha_Compra")
-	private Date fecha_Compra;
-	
-	@JoinColumn(name="validacion")
-	private int validacion;
-
-	//@OneToMany(mappedBy = "carrito")
-    //List<Carrito> products;
-	public int getValidacion() {
-		return validacion;
-	}
-	
-	public void setValidacion(int validation) {
-		this.validacion = validation;
-	}
+	private int idevento;
+	private int idusuario;
+	private Date fechacompra = new Date();
 	
 }

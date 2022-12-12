@@ -51,20 +51,20 @@ public class CarritoController {
     	//La adaptacion (paso a DTO) se hace en esta capa de control; no en Service o repo
         return CarritoResponse.of(carritoRepo.findById(id).orElseThrow(CarritoNotFoundException::new));
     }
-	/*
+	
 	//La llamaremos  
     //    /1/addCarrito?idEvent=2
     //    /1/addCarrito?idEvent=2&qt=8
-	@PostMapping("/{id}/addCarrito")
-    public void addCarrito(@PathVariable int id, @RequestParam int idEvent, @RequestParam(defaultValue = "1") Integer qt) {
-		carritoSrv.addCarrito(id, idEvent, qt);
-    }*/
-	
+	@PostMapping("/{id}/{idUser}/addCarrito")
+    public void addCarrito(@PathVariable int id, @PathVariable int idUser, @RequestParam int idEvent, @RequestParam(defaultValue = "1") Integer qt) {
+		carritoSrv.addCarrito(id, idUser, idEvent, qt);
+    }
+	/*
 	@PostMapping("/addCarrito")
     public CarritoResponse altaCarrito(@RequestBody Carrito carrito) {
         final Carrito cart = carritoSrv.save(carrito);
         return CarritoResponse.of(cart);
-    }
+    }*/
 	@PostMapping("/addCarrito/")
 	public Carrito addCarrito(@Valid @RequestBody Carrito carrito) {
 			

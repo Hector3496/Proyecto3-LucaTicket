@@ -48,6 +48,7 @@ public class EventoController {
 	
 	@GetMapping("/{id}")
 	public Evento readEvento(@PathVariable int id) {
+		log.info("******** El id: " + id);
 		return srv.findById(id).orElseThrow(EventoNotFoundException::new);
 	}
 	@PutMapping

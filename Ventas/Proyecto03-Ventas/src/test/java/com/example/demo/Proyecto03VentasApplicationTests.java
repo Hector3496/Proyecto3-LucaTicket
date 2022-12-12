@@ -39,8 +39,8 @@ class Proyecto03VentasApplicationTests {
 		carrito = new Carrito();
 		usuarios = new Usuario();
 		usuarios.setId(5);
-		carrito.setUsuarios(usuarios);
-	assertThat(carrito.getUsuarios()).isNotNull();	
+		carrito.setIdusuario(usuarios.getId());
+	assertThat(carrito.getIdusuario()).isNotNull();	
 	}
 	@Test
 	void test03() {

@@ -13,19 +13,20 @@ public class EventoAdapter {
 /* Metodo para realizar la conversion de la entity Evento a la clase a mostrar EventoDTO*/
 	public EventoDTO of(Evento evento) {
 		EventoDTO eventoDTO = new EventoDTO();
+		eventoDTO.setId(evento.getId());
 		eventoDTO.setNombre(evento.getNombre());
-		eventoDTO.setDescripcionCorta(evento.getDescripcionCorta());
-		eventoDTO.setDescripcionExtendida(evento.getDescripcionExtendida());
-		eventoDTO.setFechaEvento(evento.getFechaEvento());
-		eventoDTO.setHoraEvento(evento.getHoraEvento());
-		eventoDTO.setPrecios(evento.getPrecios());
-		eventoDTO.setNormas(evento.getNormas());
-		eventoDTO.setSalaNombre(evento.getSalaNombre());
-		eventoDTO.setSalaCiudad(evento.getSalaCiudad());
-		eventoDTO.setSalaDireccion(evento.getSalaDireccion());
-		eventoDTO.setSalaTipoRecinto(evento.getSalaTipoRecinto());
-		eventoDTO.setSalaAforo(evento.getSalaAforo());
-		eventoDTO.setGenre(evento.getGenre());
+		eventoDTO.setDescripcioncorta(evento.getDescripcioncorta());
+		eventoDTO.setDescripcionextendida(evento.getDescripcionextendida());
+    	eventoDTO.setFechaevento(evento.getFechaevento());
+    	eventoDTO.setHoraevento(evento.getHoraevento());
+    	eventoDTO.setPrecios(evento.getPrecios());
+    	eventoDTO.setNormas(evento.getNormas());
+    	eventoDTO.setSalanombre(evento.getSalanombre());
+    	eventoDTO.setSalaciudad(evento.getSalaciudad());
+    	eventoDTO.setSaladireccion(evento.getSaladireccion());
+    	eventoDTO.setSalatiporecinto(evento.getSalatiporecinto());
+    	eventoDTO.setSalaaforo(evento.getSalaaforo());
+    	eventoDTO.setGenre(evento.getGenre());
 
 		return eventoDTO;
 	}
