@@ -28,4 +28,5 @@ public interface UsuarioService {
 
 	public void deleteById(int id);
 
+	public boolean validarMail(Usuario usuario);
 }

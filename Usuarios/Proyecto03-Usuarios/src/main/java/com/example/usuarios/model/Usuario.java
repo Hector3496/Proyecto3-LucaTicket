@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 
 import lombok.Getter;
@@ -33,8 +35,10 @@ public class Usuario {
     private String nombre;
     @NotEmpty(message = "El apellido no puede estar vacío")
     private String apellido;
+    
     @NotEmpty(message = "El mail no puede estar vacío")
     private String mail;
+    
     @NotEmpty(message = "La password no puede estar vacía")
     private String password;
     private Date fecha_alta;

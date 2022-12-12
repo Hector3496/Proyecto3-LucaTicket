@@ -49,7 +49,12 @@ public class UsuarioController {
 	 */
 	@PostMapping("/addUsuario")
 	public UsuarioDTO altaUsuario(@RequestBody Usuario usuario) {
-		final Usuario user = srv.save(usuario);
+		Usuario user= null;
+		if (srv.validarMail(usuario)==false) {
+			log.info("------No se ha podido añadir porque el Email no es valido");
+		}else {
+			user = srv.save(usuario);
+		}
 		return adapter.of(user);
 	}
 	

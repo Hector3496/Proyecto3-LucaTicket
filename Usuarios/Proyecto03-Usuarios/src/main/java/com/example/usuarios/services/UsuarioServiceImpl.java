@@ -2,6 +2,8 @@ package com.example.usuarios.services;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * @author Raul
@@ -52,5 +54,12 @@ public class UsuarioServiceImpl implements UsuarioService{
 	@Override
 	public Optional<Usuario> findById(int id) {
 		return repo.findById(id);
+	}
+	@Override
+	public boolean validarMail(Usuario usuario) {
+		String mail=usuario.getMail();
+		Pattern pattern = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"); 
+        Matcher mather = pattern.matcher(mail);
+        return mather.find();
 	}
 }
