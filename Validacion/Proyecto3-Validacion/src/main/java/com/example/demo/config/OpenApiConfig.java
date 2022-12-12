@@ -1,4 +1,4 @@
-package com.example.ventas.config;
+package com.example.demo.config;
 
 
 import org.springframework.context.annotation.Bean;
@@ -15,17 +15,17 @@ import io.swagger.v3.oas.models.info.License;
 public class OpenApiConfig {
 	
     @Bean
-    public OpenAPI VentasOpenAPI() {
+    public OpenAPI ValidacionOpenAPI() {
         return new OpenAPI()
-                .info(new Info().title("Ventas API")
-                .description("Documentación de las ventas API")
+                .info(new Info().title("Validacion API")
+                .description("Documentación de las validaciones API")
                 .version("v1.0")
                 .contact(new Contact().name("Grupo 3").
                         url("https://grupo3.es").email("grupo@tres.es"))
                 .license(new License().name("LICENSE").url("http://springdoc.org")))
                 .externalDocs(new ExternalDocumentation()
-                .description("Proyecto realizar una venta, Crear y Leer. Incluimos algunos listados de busquedas")
-                .url("http://localhost:8085/ventas"));
+                .description("Proyecto realizar una validacion de una venta modo aleatorio")
+                .url("http://localhost:8085/validacion"));
     }
 	
 

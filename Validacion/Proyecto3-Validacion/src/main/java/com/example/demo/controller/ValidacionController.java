@@ -19,8 +19,11 @@ import com.example.demo.controller.error.ValidacionUnauthorizedException;
 import com.example.demo.model.Validacion;
 import com.example.demo.service.ValidacionService;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 @RestController
 @RequestMapping("/validation")
+@Tag(name = "validacion", description = "Validacion API")
 public class ValidacionController {
 
 	private static final Logger log = LoggerFactory.getLogger(ValidacionController.class);
